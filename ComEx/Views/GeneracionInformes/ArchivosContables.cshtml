@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Archivos Contables";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" id="page-hd">
+    <div class="col-lg-12">
+        <h4 class="page-header">Generar Archivos Contables</h4>
+    </div>
+</div>
+
+<div id="Principal">
+    <form id="formGenerarArchivoContable" method="post">
+        <fieldset>            
+            <div class="row">
+                <div class='col-sm-2'></div>
+                <div class='col-sm-4'>
+                    <div class="form-group form-group-lg">
+                        <label for="cmbTipoArchivo">Tipo de Archivo</label>
+                        <select id="cmbTipoArchivo" name="cmbTipoArchivo" class="selectpicker show-tick show-menu-arrow form-control" data_live_search="true">
+                            <option value="" selected>Seleccionar...</option>
+                            <option value="Notas Contables">Notas Contables</option>
+                            <option value="Compras y Ventas">Compras y Ventas</option>
+                        </select>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="cmbTipoArchivo" data-valmsg-replace="true" id="valid_cmbTipoArchivo"></span>
+                    </div>
+                </div>
+
+                <div class='col-sm-4'>
+                    <div class="form-group form-group-lg">
+                        <label for="cmbLote">Lote</label>
+                        <select id="cmbLote" name="cmbLote" class="form-control"></select>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="cmbLote" data-valmsg-replace="true" id="valid_cmbLote"></span>
+                    </div>
+                </div>
+                <div class='col-sm-2'></div>
+            </div>
+            <br />
+            <div class="row">
+                <div class='col-sm-12 text-center'>
+                    <div class="form-group">
+                        <button type="submit" role="button" class="btn btn-lg btn-primary" id="btnProcesarArchivoContable" data-loading-text="Procesando archivo contable...">Procesar</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/pages/generar.archivo.contable.js"></script>
+}

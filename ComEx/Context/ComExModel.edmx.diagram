@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ff2e0eb12005476385db959c94b106bf" Name="Diagram1" ZoomLevel="60">
+        <EntityTypeShape EntityType="db_comexModel.tcUsuarios" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_comexModel.tcMenu" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_comexModel.tcRol" Width="1.5" PointX="3.375" PointY="4.125" />
+        <EntityTypeShape EntityType="db_comexModel.tcRolMenu" Width="1.5" PointX="5.625" PointY="4" />
+        <EntityTypeShape EntityType="db_comexModel.tcRolUsuario" Width="1.5" PointX="5.625" PointY="6.75" />
+        <AssociationConnector Association="db_comexModel.FK_tcRolMenu_tcMenu" />
+        <AssociationConnector Association="db_comexModel.FK_tcRolMenu_tcRol" />
+        <AssociationConnector Association="db_comexModel.FK_tcRolUsuario_tcRol" />
+        <AssociationConnector Association="db_comexModel.FK_tcRolUsuario_tcUsuarios" />
+        <EntityTypeShape EntityType="db_comexModel.tmRegalias" Width="1.5" PointX="10.625" PointY="1" />
+        <EntityTypeShape EntityType="db_comexModel.tmLineas" Width="1.5" PointX="8.375" PointY="1.25" />
+        <AssociationConnector Association="db_comexModel.FK_tmRegalias_tmLineas" />
+        <EntityTypeShape EntityType="db_comexModel.tmCPDetalle" Width="1.5" PointX="20.375" PointY="9.5" />
+        <EntityTypeShape EntityType="db_comexModel.tmCPEncabezado" Width="1.5" PointX="18.125" PointY="8.625" />
+        <EntityTypeShape EntityType="db_comexModel.tmPlanesCI" Width="1.5" PointX="15.875" PointY="9.625" />
+        <EntityTypeShape EntityType="db_comexModel.tmCiudades" Width="1.5" PointX="11.375" PointY="4.875" />
+        <EntityTypeShape EntityType="db_comexModel.tmDepartamentos" Width="1.5" PointX="9.125" PointY="5.25" />
+        <EntityTypeShape EntityType="db_comexModel.tmImportadorExportador" Width="1.5" PointX="13.625" PointY="9.125" />
+        <EntityTypeShape EntityType="db_comexModel.tmPaises" Width="1.5" PointX="8.375" PointY="10" />
+        <EntityTypeShape EntityType="db_comexModel.tmProveedores" Width="1.5" PointX="10.625" PointY="8.25" />
+        <EntityTypeShape EntityType="db_comexModel.tmRegimenes" Width="1.5" PointX="8.375" PointY="13" />
+        <EntityTypeShape EntityType="db_comexModel.tmResolucionesProveedor" Width="1.5" PointX="12.875" PointY="14.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmUnidades" Width="1.5" PointX="5.375" PointY="0.75" />
+        <AssociationConnector Association="db_comexModel.FK_tmCPDetalle_tmCPEncabezado" />
+        <AssociationConnector Association="db_comexModel.FK_tmCPEncabezado_tmPlanesCI" />
+        <AssociationConnector Association="db_comexModel.FK_tmCPEncabezado_tmProveedores" />
+        <AssociationConnector Association="db_comexModel.FK_tmvCPsEncabezado_tmvCPsEncabezado" />
+        <AssociationConnector Association="db_comexModel.FK_tmPlanesCI_tmImportadorExportador" />
+        <AssociationConnector Association="db_comexModel.FK_tmCiudades_tmDepartamentos" />
+        <AssociationConnector Association="db_comexModel.FK_tmImportadorExportador_tmCiudades" />
+        <AssociationConnector Association="db_comexModel.FK_tmProveedores_tmCiudades" />
+        <AssociationConnector Association="db_comexModel.FK_tmImportadorExportador_tmPaises" />
+        <AssociationConnector Association="db_comexModel.FK_tmProveedores_tmPaises" />
+        <AssociationConnector Association="db_comexModel.FK_tmProveedores_tmRegimenes" />
+        <AssociationConnector Association="db_comexModel.FK_tmResolucionesProveedor_tmProveedores" />
+        <EntityTypeShape EntityType="db_comexModel.tmAdquiridasComprasTipo" Width="1.5" PointX="18.5" PointY="6.875" />
+        <EntityTypeShape EntityType="db_comexModel.tmCompras" Width="1.5" PointX="20.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmComprasDetalle" Width="1.5" PointX="23" PointY="7.125" />
+        <EntityTypeShape EntityType="db_comexModel.tmAdquiridas" Width="1.5" PointX="20.75" PointY="24" />
+        <EntityTypeShape EntityType="db_comexModel.tmComprasTipo" Width="1.5" PointX="18.5" PointY="18.125" />
+        <EntityTypeShape EntityType="db_comexModel.tmInsumos" Width="1.5" PointX="20.75" PointY="18.5" />
+        <EntityTypeShape EntityType="db_comexModel.tmMonedas" Width="1.5" PointX="0.75" PointY="9.875" />
+        <EntityTypeShape EntityType="db_comexModel.tmPosicionesArancelarias" Width="1.5" PointX="18.5" PointY="20.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmRetefuente" Width="1.5" PointX="6.5" PointY="0.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmTituloMineroProveedor" Width="1.5" PointX="14" PointY="8.25" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmAdquiridasComprasTipo" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmCiudades" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmCPEncabezado" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmProveedores" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmRegalias" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmResolucionesProveedor" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmRetefuente" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmTituloMineroProveedor" />
+        <AssociationConnector Association="db_comexModel.FK_tmComprasDetalle_tmCompras" />
+        <AssociationConnector Association="db_comexModel.FK_tmComprasDetalle_tmAdquiridas" />
+        <AssociationConnector Association="db_comexModel.FK_tmComprasDetalle_tmCPDetalle" />
+        <AssociationConnector Association="db_comexModel.FK_tmComprasDetalle_tmInsumos" />
+        <AssociationConnector Association="db_comexModel.FK_tmComprasDetalle_tmRegalias" />
+        <AssociationConnector Association="db_comexModel.FK_tmTituloMineroProveedor_tmCiudades" />
+        <AssociationConnector Association="db_comexModel.FK_tmInsumos_tmComprasTipo" />
+        <AssociationConnector Association="db_comexModel.FK_tmInsumos_tmLineas" />
+        <AssociationConnector Association="db_comexModel.FK_tmInsumos_tmPosicionesArancelarias" />
+        <AssociationConnector Association="db_comexModel.FK_tmInsumos_tmUnidades" />
+        <AssociationConnector Association="db_comexModel.FK_tmInsumos_tmUnidades1" />
+        <AssociationConnector Association="db_comexModel.FK_tmInsumos_tmUnidades2" />
+        <AssociationConnector Association="db_comexModel.FK_tmLineas_tmRetefuente" />
+        <AssociationConnector Association="db_comexModel.FK_tmPosicionesArancelarias_tmUnidades" />
+        <AssociationConnector Association="db_comexModel.FK_tmTituloMineroProveedor_tmProveedores" />
+        <AssociationConnector Association="db_comexModel.FK_tmTituloMineroProveedor_tmProveedores1" />
+        <EntityTypeShape EntityType="db_comexModel.vOrdenesCompraCI" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="db_comexModel.vOrdenesCompraDetalleCI" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="db_comexModel.vProveedores" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="db_comexModel.vResolucionFactActualProveedor" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_comexModel.vCpCI" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_comexModel.tcLogOperaciones" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmNotasCreditoDetalle" Width="1.5" PointX="25.25" PointY="8.625" />
+        <EntityTypeShape EntityType="db_comexModel.tmNotasCreditoEncabezado" Width="1.5" PointX="23" PointY="4" />
+        <AssociationConnector Association="db_comexModel.FK_tmNotasCreditoDetalle_tmComprasDetalle" />
+        <AssociationConnector Association="db_comexModel.FK_tmNotasCreditoDetalle_tmNotasCreditoEncabezado" />
+        <EntityTypeShape EntityType="db_comexModel.vXmlCIDiarioDetalle" Width="1.5" PointX="15.375" PointY="14.75" />
+        <EntityTypeShape EntityType="db_comexModel.vXmlCIDiarioEncabezado" Width="1.5" PointX="5.375" PointY="16.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmNotificaciones" Width="1.5" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmCompradores" Width="1.5" PointX="10.625" PointY="15.75" />
+        <EntityTypeShape EntityType="db_comexModel.vBorradoresDexCreacion" Width="1.5" PointX="7.375" PointY="16.75" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompradores_tmPaises" />
+        <EntityTypeShape EntityType="db_comexModel.vFormatoOrdenesCompraCI" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="db_comexModel.vLotesSinDEX" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_comexModel.tipoDocumentosArchivosAdjuntos" Width="1.5" PointX="9.375" PointY="20.5" />
+        <EntityTypeShape EntityType="db_comexModel.tmDocumentosAdjuntos" Width="1.5" PointX="11.625" PointY="20" />
+        <AssociationConnector Association="db_comexModel.FK_tiDocumentosAdjuntosDetalle_tipoDocumentosArchivosAdjuntos" />
+        <EntityTypeShape EntityType="db_comexModel.vReporteOrdenesCompraCI" Width="1.5" PointX="14.375" PointY="20.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmpTmvCpDetalleInterface" Width="1.5" PointX="5.625" PointY="24.5" />
+        <EntityTypeShape EntityType="db_comexModel.tmpTmvCpEncabezadoInterface" Width="1.5" PointX="3.375" PointY="23.25" />
+        <AssociationConnector Association="db_comexModel.FK_tmpTmvCpDetalleInterface_tmpTmvCpEncabezadoInterface" />
+        <EntityTypeShape EntityType="db_comexModel.tmptmvDEXDetalleContinuacionInterface" Width="1.5" PointX="25.625" PointY="20.5" />
+        <EntityTypeShape EntityType="db_comexModel.tmptmvDEXDetalleInterface" Width="1.5" PointX="25.625" PointY="23.25" />
+        <EntityTypeShape EntityType="db_comexModel.tmpTmvDEXEncabezadoInterface" Width="1.5" PointX="23.375" PointY="14.875" />
+        <EntityTypeShape EntityType="db_comexModel.tmpTmvDEXEncabezadoSoporteInterface" Width="1.5" PointX="25.625" PointY="32.125" />
+        <EntityTypeShape EntityType="db_comexModel.tmpTmvDEXEncabezadoTransportadorInterface" Width="1.5" PointX="25.625" PointY="15.25" />
+        <AssociationConnector Association="db_comexModel.FK_tmptmvDEXDetalleContinuacionInterface_tmpTmvDEXEncabezadoInterface" />
+        <AssociationConnector Association="db_comexModel.FK_tmptmvDEXDetalleInterface_tmpTmvDEXEncabezadoInterface" />
+        <AssociationConnector Association="db_comexModel.FK_tmpTmvDEXEncabezadoSoporteInterface_tmpTmvDEXEncabezadoInterface" />
+        <AssociationConnector Association="db_comexModel.FK_tmpTmvDEXEncabezadoTransportadorInterface_tmpTmvDEXEncabezadoInterface" />
+        <EntityTypeShape EntityType="db_comexModel.tmptmvDEXDetalleCpsInterface" Width="1.5" PointX="25.625" PointY="38" />
+        <AssociationConnector Association="db_comexModel.FK_tmptmvDEXDetalleCpsInterface_tmpTmvDEXEncabezadoInterface" />
+        <EntityTypeShape EntityType="db_comexModel.vInformeAnualCi" Width="1.5" PointX="8.375" PointY="23.75" />
+        <EntityTypeShape EntityType="db_comexModel.vInformeUIAFCompVent" Width="1.5" PointX="10.375" PointY="24.75" />
+        <EntityTypeShape EntityType="db_comexModel.vInformeUIAFImpExp" Width="1.5" PointX="16.375" PointY="24.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmvDEXEncabezado" Width="1.5" PointX="28.125" PointY="8.75" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXEncabezado_tmPlanesCI" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXEncabezado_tmCompradores" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXEncabezado_tmImportadorExportador" />
+        <EntityTypeShape EntityType="db_comexModel.vInventarioCp" Width="1.5" PointX="25.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_comexModel.vDocumentosAdjuntosDexCIComex" Width="1.5" PointX="17.375" PointY="14.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmCuadrosInsumoProducto" Width="1.5" PointX="19.875" PointY="0.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmvDexCorreciones" Width="1.5" PointX="30.375" PointY="15.25" />
+        <EntityTypeShape EntityType="db_comexModel.tmvDEXDetalle" Width="1.5" PointX="30.375" PointY="8.25" />
+        <EntityTypeShape EntityType="db_comexModel.tmvFacturasExportacionDetalle" Width="1.5" PointX="30" PointY="4.125" />
+        <EntityTypeShape EntityType="db_comexModel.tmvFacturasExportacionEncabezado" Width="1.5" PointX="27.75" PointY="43.375" />
+        <EntityTypeShape EntityType="db_comexModel.tmvProductosFacturacion" Width="1.5" PointX="27.75" PointY="7" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmCompradores" />
+        <AssociationConnector Association="db_comexModel.FK_tmCuadrosInsumoProducto_tmImportadorExportador1" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmImportadorExportador" />
+        <AssociationConnector Association="db_comexModel.FK_tmvProductosFacturacion_tmLineas" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmMonedas" />
+        <AssociationConnector Association="db_comexModel.FK_tmvProductosFacturacion_tmPosicionesArancelarias" />
+        <AssociationConnector Association="db_comexModel.FK_tmCuadrosInsumoProducto_tmUnidades" />
+        <AssociationConnector Association="db_comexModel.FK_tmCuadrosInsumoProducto_tmUnidades1" />
+        <AssociationConnector Association="db_comexModel.FK_tmvProductosFacturacion_tmUnidades" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXDetalle_tmCuadrosInsumoProducto" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDexCorreciones_tmvDEXEncabezado" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXDetalle_tmvDEXEncabezado" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionDetalle_tmvFacturasExportacionEncabezado" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionDetalle_tmvProductosFacturacion" />
+        <EntityTypeShape EntityType="db_comexModel.tmIncoterms" Width="1.5" PointX="19.375" PointY="14.875" />
+        <EntityTypeShape EntityType="db_comexModel.vFacturasExportacion" Width="1.5" PointX="18.375" PointY="26.75" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmIncoterms" />
+        <EntityTypeShape EntityType="db_comexModel.vDEX" Width="1.5" PointX="20.375" PointY="27.125" />
+        <EntityTypeShape EntityType="db_comexModel.vDexDetalleComex" Width="1.5" PointX="28.375" PointY="21.125" />
+        <EntityTypeShape EntityType="db_comexModel.tmAduanas" Width="1.5" PointX="25.875" PointY="15.5" />
+        <EntityTypeShape EntityType="db_comexModel.tmLugaresEmbarque" Width="1.5" PointX="10.625" PointY="33.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmTerceros" Width="1.5" PointX="22.625" PointY="0.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmTransportes" Width="1.5" PointX="25.875" PointY="54" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXEncabezado_tmAduanas" />
+        <AssociationConnector Association="db_comexModel.FK_tmTerceros_tmCiudades" />
+        <AssociationConnector Association="db_comexModel.FK_tmLugaresEmbarque_tmPaises" />
+        <AssociationConnector Association="db_comexModel.FK_tmTerceros_tmPaises" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXEncabezado_tmLugaresEmbarque" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXEncabezado_tmTerceros" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXEncabezado_tmTerceros1" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXEncabezado_tmTransportes" />
+        <EntityTypeShape EntityType="db_comexModel.tmvDexPdfCPs" Width="1.5" PointX="33.375" PointY="11.75" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDexPdfCPs_tmCPEncabezado" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDexPdfCPs_tmvDEXEncabezado" />
+        <EntityTypeShape EntityType="db_comexModel.vFormatoDocEquivalenteCI" Width="1.5" PointX="28.375" PointY="26.75" />
+        <EntityTypeShape EntityType="db_comexModel.tcParametros" Width="1.5" PointX="25.375" PointY="12.75" />
+        <EntityTypeShape EntityType="db_comexModel.tmRemisionDocumentos" Width="1.5" PointX="12.875" PointY="31.875" />
+        <AssociationConnector Association="db_comexModel.FK_tmRemisionDocumentos_tmProveedores" />
+        <EntityTypeShape EntityType="db_comexModel.vPdfCpManualDetalle" Width="1.5" PointX="0.75" PointY="30.375" />
+        <EntityTypeShape EntityType="db_comexModel.vPdfCpManualEncabezado" Width="1.5" PointX="5.75" PointY="31.375" />
+        <EntityTypeShape EntityType="db_comexModel.tmResolucionesImportadorExportador" Width="1.5" PointX="15.875" PointY="33.375" />
+        <EntityTypeShape EntityType="db_comexModel.vFormatoDocEquivalenteCINuevo" Width="1.5" PointX="30.375" PointY="19" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmImportadorExportador" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmImportadorExportador1" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmLugaresEmbarque" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompras_tmResolucionesImportadorExportador" />
+        <AssociationConnector Association="db_comexModel.FK_tmCPEncabezado_tmCompras" />
+        <AssociationConnector Association="db_comexModel.FK_tmImportadorExportador_tmAduanas" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompradores_tmCiudades" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompradores_tmIncoterms" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompradores_tmLugaresEmbarque" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompradores_tmLugaresEmbarque1" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompradores_tmMonedas" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompradores_tmTerceros" />
+        <AssociationConnector Association="db_comexModel.FK_tmCompradores_tmTransportes" />
+        <AssociationConnector Association="db_comexModel.FK_tmCuadrosInsumoProducto_tmCompradores" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmCompradores1" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmCompradores2" />
+        <AssociationConnector Association="db_comexModel.FK_tmImportadorExportador_tmDepartamentos" />
+        <AssociationConnector Association="db_comexModel.FK_tmCuadrosInsumoProducto_tmImportadorExportador" />
+        <AssociationConnector Association="db_comexModel.FK_tmImportadorExportador_tmTerceros" />
+        <AssociationConnector Association="db_comexModel.FK_tmImportadorExportador_tmTerceros1" />
+        <AssociationConnector Association="db_comexModel.FK_tmResolucionesImportadorExportador_tmImportadorExportador" />
+        <AssociationConnector Association="db_comexModel.FK_tmvProductosFacturacion_tmImportadorExportador" />
+        <AssociationConnector Association="db_comexModel.FK_tmProveedores_tmIncoterms" />
+        <AssociationConnector Association="db_comexModel.FK_tmInsumos_tmCuadrosInsumoProducto" />
+        <AssociationConnector Association="db_comexModel.FK_tmvProductosFacturacion_tmInsumos" />
+        <AssociationConnector Association="db_comexModel.FK_tmProveedores_tmMonedas" />
+        <AssociationConnector Association="db_comexModel.FK_tmPosicionesArancelarias_tmCuadrosInsumoProducto" />
+        <AssociationConnector Association="db_comexModel.FK_tmPosicionesArancelarias_tmCuadrosInsumoProducto1" />
+        <AssociationConnector Association="db_comexModel.FK_tmPosicionesArancelarias_tmPosicionesArancelarias" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionDetalle_tmPosicionesArancelarias" />
+        <AssociationConnector Association="db_comexModel.FK_tmProveedores_tmLugaresEmbarque" />
+        <AssociationConnector Association="db_comexModel.FK_tmTerceros_tmRetefuente" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionDetalle_tmUnidades" />
+        <AssociationConnector Association="db_comexModel.FK_tmvProductosFacturacion_tmUnidades1" />
+        <AssociationConnector Association="db_comexModel.FK_tmvProductosFacturacion_tmUnidades2" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmLugaresEmbarque" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmLugaresEmbarque1" />
+        <AssociationConnector Association="db_comexModel.FK_tmTerceros_tmTransportes" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmTerceros" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmTerceros1" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionEncabezado_tmTransportes" />
+        <AssociationConnector Association="db_comexModel.FK_tmCuadrosInsumoProducto_tmCuadrosInsumoProducto" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionDetalle_tmCuadrosInsumoProducto" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionDetalle_tmCuadrosInsumoProducto1" />
+        <AssociationConnector Association="db_comexModel.FK_tmvProductosFacturacion_tmCuadrosInsumoProducto" />
+        <AssociationConnector Association="db_comexModel.FK_tmvProductosFacturacion_tmCuadrosInsumoProducto1" />
+        <AssociationConnector Association="db_comexModel.FK_tmvDEXDetalle_tmvFacturasExportacionEncabezado" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionDetalle_tmvDEXDetalle" />
+        <EntityTypeShape EntityType="db_comexModel.tmTiposDescuentos" Width="1.5" PointX="28.125" PointY="36.625" />
+        <EntityTypeShape EntityType="db_comexModel.tmvFacturasExportacionNotasCredito" Width="1.5" PointX="30.375" PointY="35.875" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionNotasCredito_tmTiposDescuentos" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionNotasCredito_tmvDEXEncabezado" />
+        <AssociationConnector Association="db_comexModel.FK_tmvFacturasExportacionNotasCredito_tmvFacturasExportacionEncabezado" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,273 @@
+﻿@model ComEx.Context.tmvDEXEncabezado
+
+@{
+    ViewBag.Title = "Editar DEX";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="~/bower_components/bootstrap-select/css/bootstrap-select.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="~/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" media="all" rel="stylesheet" type="text/css" />
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmTmvDEXEncabezadoEditar" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="position: relative">
+        <br />
+        <h4>DEX</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.HiddenFor(model => model.intIdDEX, new { htmlAttributes = new { @class = "form-control" } })
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.varCdAuxliar, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varCdAuxliar, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varCdAuxliar, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.fecAuxliar, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.fecAuxliar, new { htmlAttributes = new { @class = "form-control calendario" } })
+                @Html.ValidationMessageFor(model => model.fecAuxliar, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.varNmroDEX, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varNmroDEX, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varNmroDEX, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.fecAprbcionDEX, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.fecAprbcionDEX, new { htmlAttributes = new { @class = "form-control calendario" } })
+                @Html.ValidationMessageFor(model => model.fecAprbcionDEX, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.fecEmbrque, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.fecEmbrque, new { htmlAttributes = new { @class = "form-control calendario" } })
+                @Html.ValidationMessageFor(model => model.fecEmbrque, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.intIdCmprdor, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdCmprdor, new SelectList(ViewBag.listComprador, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdCmprdor, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.intIdImprtdorExprtdor, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdImprtdorExprtdor, new SelectList(ViewBag.listExportador, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdImprtdorExprtdor, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.intIdAduana, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdAduana, new SelectList(ViewBag.listAduana, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdAduana, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.intIdLgarEmbrque, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdLgarEmbrque, new SelectList(ViewBag.listLugarEmbarque, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdLgarEmbrque, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.intIdDclrnte, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdDclrnte, new SelectList(ViewBag.listDeclarante, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdDclrnte, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numExprtcionesUSD, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numExprtcionesUSD, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numExprtcionesUSD, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numVlorFOB, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numVlorFOB, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numVlorFOB, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numFltes, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numFltes, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numFltes, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numSgro, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numSgro, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numSgro, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numOtrosGstos, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numOtrosGstos, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numOtrosGstos, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numVlorReintgrarUSD, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numVlorReintgrarUSD, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numVlorReintgrarUSD, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numVlorAgrgdoNcional, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numVlorAgrgdoNcional, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numVlorAgrgdoNcional, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numTtalSries, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numTtalSries, new { htmlAttributes = new { @class = "form-control Numero" } })
+                @Html.ValidationMessageFor(model => model.numTtalSries, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numBltos, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numBltos, new { htmlAttributes = new { @class = "form-control Numero" } })
+                @Html.ValidationMessageFor(model => model.numBltos, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numTtalPsoBrto, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numTtalPsoBrto, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numTtalPsoBrto, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numTtalPsoNto, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numTtalPsoNto, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numTtalPsoNto, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.numNumroAcptcion, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numNumroAcptcion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.numNumroAcptcion, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.fecAcptcion, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.fecAcptcion, new { htmlAttributes = new { @class = "form-control calendario" } })
+                @Html.ValidationMessageFor(model => model.fecAcptcion, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.varSlctudAtrzcionEmbrque, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varSlctudAtrzcionEmbrque, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varSlctudAtrzcionEmbrque, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.fecAtrzcionEmbrque, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.fecAtrzcionEmbrque, new { htmlAttributes = new { @class = "form-control calendario" } })
+                @Html.ValidationMessageFor(model => model.fecAtrzcionEmbrque, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.varMnfiestoCrga, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varMnfiestoCrga, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varMnfiestoCrga, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.fecMnfiestoCrga, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.fecMnfiestoCrga, new { htmlAttributes = new { @class = "form-control calendario" } })
+                @Html.ValidationMessageFor(model => model.fecMnfiestoCrga, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.intIdTrnsprte, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdTrnsprte, new SelectList(ViewBag.listTransporte, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdTrnsprte, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.intIdPlanCI, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdPlanCI, new SelectList(ViewBag.listPlanCI, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdPlanCI, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.varNmroFrmlrioAntrior, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varNmroFrmlrioAntrior, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varNmroFrmlrioAntrior, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.varNmroDcmntoTrnsprte, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varNmroDcmntoTrnsprte, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varNmroDcmntoTrnsprte, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.fecDcmntoTrnsprte, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.fecDcmntoTrnsprte, new { htmlAttributes = new { @class = "form-control calendario" } })
+                @Html.ValidationMessageFor(model => model.fecDcmntoTrnsprte, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.varCmntrio, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varCmntrio, new { htmlAttributes = new { @class = "form-control", @rows = "3" } })
+                @Html.ValidationMessageFor(model => model.varCmntrio, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <input type="submit" value="Actualizar" class="btn btn-success" id="btnEditar" data-loading-text="Actualizando..." />
+                <a href="@Url.Action("Index", "tmvDEXEncabezado")" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment-with-locales.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/pages/dex.js"></script>
+}

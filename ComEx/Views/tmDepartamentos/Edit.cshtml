@@ -1,0 +1,51 @@
+﻿@model ComEx.Context.tmDepartamentos
+
+@{
+    /**/
+
+    ViewBag.Title = "Editar Departamento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmtmDepartamentosEditar" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="position: relative">
+        <br />
+        <h4>Departamentos</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.HiddenFor(model => model.intIdDprtmnto, new { htmlAttributes = new { @class = "form-control" } })
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varCdDprtmnto, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varCdDprtmnto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varCdDprtmnto, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varDscrpcionDprtmnto, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varDscrpcionDprtmnto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varDscrpcionDprtmnto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <input type="submit" value="Actualizar" class="btn btn-success" id="btnEditar" data-loading-text="Actualizando..." />
+                <a href="@Url.Action("Index", "tmDepartamentos")" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
+
+    </div>
+}
+
+@section scripts
+{
+    <script src="~/Scripts/pages/departamento.js"></script>
+}

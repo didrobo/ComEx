@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>ComEx - @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- DataTables CSS -->
+    <link href="@Url.Content("~/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css")" rel="stylesheet" type="text/css" />
+    <!-- DataTables Responsive CSS -->
+    <link href="@Url.Content("~/bower_components/datatables-responsive/css/dataTables.responsive.css")" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/bower_components/morrisjs/morris.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/font-awesome/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/menu-ocultable/sbadmin2-sidebar-toggle.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/select2/dist/css/select2.min.css")" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- jQuery -->
+    @Scripts.Render("~/bundles/jquery")
+    <script src="@Url.Content("~/bower_components/jquery/dist/jquery.min.js")"></script>
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="@Url.Content("~/bower_components/metisMenu/dist/metisMenu.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.signalR-2.2.2.min.js")"></script>
+    <script src=@Url.Content("~/signalr/hubs")></script>
+
+    @*Section para agregar CSS personalizados*@
+    @RenderSection("css", false)
+    <link href="@Url.Content("~/Content/general.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        @Html.Action("Index", "Navbar")
+
+        <div id="page-wrapper">
+
+            <div id="pnlMensajes" style="padding: 5px;">
+            </div>
+
+            @RenderBody()
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <script src="@Url.Content("~/Scripts/global.js")"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="@Url.Content("~/bower_components/raphael/raphael-min.js")"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="@Url.Content("~/bower_components/datatables/media/js/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js")"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="@Url.Content("~/Scripts/sb-admin-2.js")"></script>
+
+    <script src="~/bower_components/BlockUI/blockUI.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    //session end
+    var sessionTimeoutWarning = @Session.Timeout- 1;
+
+        var baseUrl = "@Url.Content("~/")";
+
+        var sTimeout = parseInt(sessionTimeoutWarning) * 60 * 1000;
+        setTimeout('SessionEnd()', sTimeout);
+
+        function SessionEnd() {
+            window.location = "@Url.Action("LogOut", "Home")";
+    }
+
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+
+        $('#wrapper.toggled').find("#sidebar-wrapper").find(".collapse").collapse('hide');
+
+    });
+
+    $('#slide-submenu').on('click', function () {
+
+        if ($('#divMenu').is(':visible')) {
+            $(this).children('i').removeClass('fa-arrow-left');
+            $(this).children('i').addClass('fa-arrow-right');
+
+            $('#divMenu').fadeOut('fast', function () {
+                $('#page-wrapper').css("margin", "0 0 0 15px");
+                $('#divContentMenu').css("width", "15px");
+            });
+        }
+        else {
+            $(this).children('i').removeClass('fa-arrow-right');
+            $(this).children('i').addClass('fa-arrow-left');
+
+            $('#divMenu').fadeIn('fast', function () {
+                $('#page-wrapper').css("margin", "");
+                $('#divContentMenu').css("width", "");
+            });
+        }
+    });
+    </script>
+
+    @*Section para agregar scripts personalizados*@
+    @RenderSection("scripts", required: false)
+
+    <script src="@Url.Content("~/bower_components/select2/dist/js/select2.min.js")"></script>
+</body>
+</html>
+

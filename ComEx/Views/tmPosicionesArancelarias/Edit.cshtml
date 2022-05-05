@@ -1,0 +1,78 @@
+﻿@model ComEx.Context.tmPosicionesArancelarias
+
+@{
+    /**/
+
+    ViewBag.Title = "Editar Posición Arancelaria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="~/bower_components/bootstrap-select/css/bootstrap-select.min.css" media="all" rel="stylesheet" type="text/css" />
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmtmPosicionesArancelariasEditar" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="position: relative">
+        <br />
+        <h4>Posición Arancelaria</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.HiddenFor(model => model.intIdPscionArnclria, new { htmlAttributes = new { @class = "form-control" } })
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varPscionArnclria, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varPscionArnclria, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varPscionArnclria, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numPrcntjeArncel, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numPrcntjeArncel, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numPrcntjeArncel, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numPrcntjeIva, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numPrcntjeIva, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numPrcntjeIva, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intIdUndad, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdUndad, new SelectList(ViewBag.listUnidad, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdUndad, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.varDscrpcionPscionArnclria, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varDscrpcionPscionArnclria, new { htmlAttributes = new { @class = "form-control", @rows = "5" } })
+                @Html.ValidationMessageFor(model => model.varDscrpcionPscionArnclria, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <input type="submit" value="Actualizar" class="btn btn-success" id="btnEditar" data-loading-text="Actualizando..." />
+                <a href="@Url.Action("Index", "tmPosicionesArancelarias")" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
+
+    </div>
+}
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/pages/posicion.arancelaria.js"></script>
+}

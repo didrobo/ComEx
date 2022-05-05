@@ -1,0 +1,179 @@
+﻿
+@{
+    ViewBag.Title = "CPs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="@Url.Content("~/bower_components/datatables/extensions/Select/css/select.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/datatables/extensions/Buttons/css/buttons.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/datatables/extensions/ColReorder/css/colReorder.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/alertifyjs/css/alertify.css")" media="all" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/alertifyjs/css/themes/default.css")" media="all" rel="stylesheet" type="text/css" />
+}
+
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="dataTable_wrapper">
+            <table class="table table-striped table-bordered table-hover display compact" style="border-spacing: 0px; border-collapse: separate; width: 100%;" id="table-cps">
+                <thead></thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <!-- /.col-lg-12 -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalDevoluciones" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Devoluciones</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="message"></div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="varCodigo">Código</label>
+                                <input class="form-control" type="text" id="varCodigo" required>
+                                <span class="field-validation-valid text-danger" id="valid_varCodigo"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="fecFecha">Fecha</label>
+                                <input class="form-control" type="date" id="fecFecha" required>
+                                <span class="field-validation-valid text-danger" id="valid_fecFecha"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12" id="bodyModal">
+                            <table class="table table-striped table-bordered table-hover display compact" id="table-itemsCompraCP" style="border-spacing: 0px; border-collapse: separate; width: 100%;"></table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="btnCrearDevol" data-loading-text="Creando...">Crear Devolución</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="divFormCrearXmlCP" style="display: none;">
+    <form id="formCrearXmlCP" method="post">
+        <fieldset>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="intAno">Año*</label>
+                        <input class="form-control" type="number" min="1995" max="2100" value="2000" id="intAno" name="intAno" required>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="intAno" data-valmsg-replace="true" id="valid_intAno"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="intConcepto">Concepto*</label>
+                        <input class="form-control" type="number" min="1" id="intConcepto" name="intConcepto" required>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="intConcepto" data-valmsg-replace="true" id="valid_intConcepto"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="intFormato">Formato*</label>
+                        <input class="form-control" type="number" id="intFormato" name="intFormato" required>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="intFormato" data-valmsg-replace="true" id="valid_intFormato"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">                
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="intVersion">Versión*</label>
+                        <input class="form-control" type="number" min="1" max="99" id="intVersion" name="intVersion" required>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="intVersion" data-valmsg-replace="true" id="valid_intVersion"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="intNumEnvio">Núm. Envío*</label>
+                        <input class="form-control" type="number" min="1" max="99999999" id="intNumEnvio" name="intNumEnvio" required>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="intNumEnvio" data-valmsg-replace="true" id="valid_intNumEnvio"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fecFechaEnvio">Fec. Envío*</label>
+                        <input class="form-control" type="date" id="fecFechaEnvio" name="fecFechaEnvio" required>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="fecFechaEnvio" data-valmsg-replace="true" id="valid_fecFechaEnvio"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fecFechaInicial">Fec. Inicial*</label>
+                        <input class="form-control" type="date" id="fecFechaInicial" name="fecFechaInicial" required>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="fecFechaInicial" data-valmsg-replace="true" id="valid_fecFechaInicial"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fecFechaFinal">Fec. Final*</label>
+                        <input class="form-control" type="date" id="fecFechaFinal" name="fecFechaFinal" required>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="fecFechaFinal" data-valmsg-replace="true" id="valid_fecFechaFinal"></span>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-modal-wrapper/bootstrap.modal.wrapper.js"></script>
+    <script src="~/bower_components/datatables/extensions/Select/js/dataTables.select.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/Buttons/js/jszip.js"></script>
+    <script src="~/bower_components/datatables/extensions/Buttons/js/buttons.html5.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/FormFilter/js/dataTables.formFilter.js"></script>
+    <script src="~/bower_components/alertifyjs/js/alertify.min.js"></script>
+    <script src="~/Scripts/pages/cp.js"></script>
+}

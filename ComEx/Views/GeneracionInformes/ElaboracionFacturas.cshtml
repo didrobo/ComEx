@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Elaboración de Facturas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="@Url.Content("~/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css")" media="all" rel="stylesheet" type="text/css" />
+}
+
+<div class="row" id="page-hd">
+    <div class="col-lg-12">
+        <h4 class="page-header">Elaboración de Facturas</h4>
+    </div>
+</div>
+
+<div id="Principal">
+    <div class="container" style="position: relative;">
+        <div class="row">
+            <div class='col-sm-4'></div>
+            <div class='col-sm-2'>
+                <div class="form-group form-group-lg">
+                    <label for="fecDesde">Desde</label>
+                    <input id="fecDesde" name="fecDesde" class="form-control calendario" type="datetime" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="fecDesde" data-valmsg-replace="true" id="valid_fecDesde"></span>
+                </div>
+            </div>
+
+            <div class='col-sm-2'>
+                <div class="form-group form-group-lg">
+                    <label for="fecHasta">Hasta</label>
+                    <input id="fecHasta" name="fecDesde" class="form-control calendario" type="datetime" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="fecHasta" data-valmsg-replace="true" id="valid_fecHasta"></span>
+                </div>
+            </div>
+            <div class='col-sm-4'></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class='col-sm-12 text-center'>
+                <div class="form-group">
+                    <button type="submit" role="button" class="btn btn-lg btn-primary" id="btnProcesar" data-loading-text="Procesando archivos...">Procesar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment-with-locales.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/pages/elaboracion.facturas.js"></script>
+}
+

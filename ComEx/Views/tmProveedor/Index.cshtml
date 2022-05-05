@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "Proveedores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="@Url.Content("~/bower_components/datatables/extensions/Select/css/select.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/datatables/extensions/Buttons/css/buttons.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/datatables/extensions/ColReorder/css/colReorder.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/alertifyjs/css/alertify.css")" media="all" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/alertifyjs/css/themes/default.css")" media="all" rel="stylesheet" type="text/css" />
+}
+
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="dataTable_wrapper">
+            <table class="table table-striped table-bordered table-hover display compact" style="border-spacing: 0px; border-collapse: separate; width: 100%;" id="table-proveedores">
+                <thead></thead>
+                <tbody></tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+    </div>
+    <!-- /.col-lg-12 -->
+    <!-- Modal -->
+    <div class="modal fade" id="modalResoluciones" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Resoluciones de Facturación</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="messageResolucion"></div>
+                    <div id="divFormResoluciones" style="display: none;">
+                        <div class="row">
+                            <input type="hidden" id="hfIntIdRslcion" />
+                            <input type="hidden" id="hfIntIdPrvdor" />
+                            <input type="hidden" id="hfOperacion" />
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="NmroRslcion">Resolución</label>
+                                    <input class="form-control" type="text" id="NmroRslcion" required>
+                                    <span class="field-validation-valid text-danger" id="valid_NmroRslcion"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="varPrfjo">Prefijo</label>
+                                    <input class="form-control mayuscula" type="text" id="varPrfjo" required>
+                                    <span class="field-validation-valid text-danger" id="valid_varPrfjo"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="NmroRslcionDsde">Desde</label>
+                                    <input class="form-control" type="number" id="NmroRslcionDsde" required>
+                                    <span class="field-validation-valid text-danger" id="valid_NmroRslcionDsde"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="NmroRslcionHsta">Hasta</label>
+                                    <input class="form-control" type="number" id="NmroRslcionHsta" required>
+                                    <span class="field-validation-valid text-danger" id="valid_NmroRslcionHsta"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="fecRslcion">F. Resolución</label>
+                                    <input class="form-control" type="date" id="fecRslcion" required>
+                                    <span class="field-validation-valid text-danger" id="valid_fecRslcion"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="intVgnciaMses">Vigencia (Meses)</label>
+                                    <input class="form-control" type="number" id="intVgnciaMses" required>
+                                    <span class="field-validation-valid text-danger" id="valid_intVgnciaMses"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="FecVncmientoRslcion">F. Vencimiento</label>
+                                    <input class="form-control" type="date" id="FecVncmientoRslcion" required>
+                                    <span class="field-validation-valid text-danger" id="valid_FecVncmientoRslcion"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-1">
+                                <div class="form-group">
+                                    <label for="bitActva">Activa</label>
+                                    <input class="form-control" type="checkbox" id="bitActva" required>
+                                    <span class="field-validation-valid text-danger" id="valid_bitActva"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-7 text-right">
+                                <br />
+                                <button type="button" class="btn btn-danger" id="btnCancelarResol">Cancelar</button>
+                                <button type="button" class="btn btn-primary" id="btnGuardarResol" data-loading-text="Guardando...">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divTablaResoluciones">
+                        <div class="row">
+                            <div class="col-sm-12" id="bodyModal">
+                                <table class="table table-striped table-bordered table-hover display compact" id="table-resoluciones" style="border-spacing: 0px; border-collapse: separate; width: 100%;"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-modal-wrapper/bootstrap.modal.wrapper.js"></script>
+    <script src="~/bower_components/datatables/extensions/Select/js/dataTables.select.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/Buttons/js/jszip.js"></script>
+    <script src="~/bower_components/datatables/extensions/Buttons/js/buttons.html5.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/FormFilter/js/dataTables.formFilter.js"></script>
+    <script src="~/bower_components/alertifyjs/js/alertify.min.js"></script>
+    <script src="~/Scripts/pages/proveedores.js"></script>
+}

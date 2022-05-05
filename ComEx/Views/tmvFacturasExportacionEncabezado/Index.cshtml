@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "Facturas de Exportación";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="@Url.Content("~/bower_components/datatables/extensions/Select/css/select.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/datatables/extensions/Buttons/css/buttons.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/datatables/extensions/ColReorder/css/colReorder.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css")" media="all" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/alertifyjs/css/alertify.css")" media="all" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/alertifyjs/css/themes/default.css")" media="all" rel="stylesheet" type="text/css" />
+}
+
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="dataTable_wrapper">
+            <table class="table table-striped table-bordered table-hover display compact" style="border-spacing: 0px; border-collapse: separate; width: 100%;" id="table-facturas-exportacion">
+                <thead></thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <!-- /.col-lg-12 -->
+    <!-- Modal -->
+    <div class="modal fade" id="modalNotasCredito" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Notas Crédito</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="messageNotasCredito"></div>
+                    <div id="divFormNotasCredito" style="display: none;">
+                        <div class="row">
+                            <input type="hidden" id="hfIntIdFctraExprtcionNtaCrdto" />
+                            <input type="hidden" id="hfIntIdFctraExprtcion" />
+                            <input type="hidden" id="hfOperacion" />
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="varNmroNtaCrdto">No. Nota Crédito</label>
+                                    <input class="form-control" type="text" id="varNmroNtaCrdto" required>
+                                    <span class="field-validation-valid text-danger" id="valid_varNmroNtaCrdto"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="fecAsientoNtaCrdto">F. Asiento</label>
+                                    <input class="form-control" type="date" id="fecAsientoNtaCrdto" required>
+                                    <span class="field-validation-valid text-danger" id="valid_fecAsientoNtaCrdto"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="intIdTpoDscuento">Tipo Descuento</label>
+                                    <select class="selectpicker show-tick show-menu-arrow form-control" id="intIdTpoDscuento" required></select>
+                                    <span class="field-validation-valid text-danger" id="valid_intIdTpoDscuento"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="numVlorNtaCrdto">Valor</label>
+                                    <input class="form-control" type="number" id="numVlorNtaCrdto" required>
+                                    <span class="field-validation-valid text-danger" id="valid_numVlorNtaCrdto"></span>
+                                </div>
+                            </div>
+
+                            
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <label for="varObsrvciones">Observaciones</label>
+                                    <input class="form-control" type="text" id="varObsrvciones" required>
+                                    <span class="field-validation-valid text-danger" id="valid_varObsrvciones"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 text-right">
+                                <br />
+                                <button type="button" class="btn btn-danger" id="btnCancelarNotaCred">Cancelar</button>
+                                <button type="button" class="btn btn-primary" id="btnGuardarNotaCred" data-loading-text="Guardando...">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divTablaNotasCredito">
+                        <div class="row">
+                            <div class="col-sm-12" id="bodyModal">
+                                <table class="table table-striped table-bordered table-hover display compact" id="table-notas-credito" style="border-spacing: 0px; border-collapse: separate; width: 100%;"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-modal-wrapper/bootstrap.modal.wrapper.js"></script>
+    <script src="~/bower_components/datatables/extensions/Select/js/dataTables.select.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/Buttons/js/jszip.js"></script>
+    <script src="~/bower_components/datatables/extensions/Buttons/js/buttons.html5.min.js"></script>
+    <script src="~/bower_components/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment-with-locales.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/bower_components/datatables/extensions/FormFilter/js/dataTables.formFilter.js"></script>
+    <script src="~/bower_components/alertifyjs/js/alertify.min.js"></script>
+    <script src="~/Scripts/pages/factura.exportacion.js"></script>
+}

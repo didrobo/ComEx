@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="cp">
+		<xs:annotation>
+			<xs:documentation>Elemento que encapsula la información del formulario F640 v1 Certificado al Proveedor.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="cphoja2" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="cpto" use="required">
+				<xs:annotation>
+					<xs:documentation>Concepto</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="99"/>
+						<xs:totalDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="tdoc" use="required">
+				<xs:annotation>
+					<xs:documentation>Tipo de Documento</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="99"/>
+						<xs:totalDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ndoc" use="required">
+				<xs:annotation>
+					<xs:documentation>Número de Identificación</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="0"/>
+						<xs:maxLength value="20"/>
+						<xs:pattern value="[0-9]{1,15}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="apl1" use="optional">
+				<xs:annotation>
+					<xs:documentation>Primer Apellido</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="apl2" use="optional">
+				<xs:annotation>
+					<xs:documentation>Segundo Apellido</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="nom1" use="optional">
+				<xs:annotation>
+					<xs:documentation>Primer Nombre</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="nom2" use="optional">
+				<xs:annotation>
+					<xs:documentation>Segundo Nombre</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="razsoc" use="optional">
+				<xs:annotation>
+					<xs:documentation>Razón Social</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="450"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="nforant" use="optional">
+				<xs:annotation>
+					<xs:documentation>Número de Formulario Anterior</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="13"/>
+						<xs:pattern value="[0-9]{1,13}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="fecfant" type="xs:date" use="optional">
+				<xs:annotation>
+					<xs:documentation>Fecha Formulario Anterior</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="cantfac" use="required">
+				<xs:annotation>
+					<xs:documentation>Cantidad de Facturas</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:totalDigits value="3"/>
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="vtcons" use="required">
+				<xs:annotation>
+					<xs:documentation>Valor Total Consolidado</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="25"/>
+						<xs:fractionDigits value="6"/>
+						<xs:maxInclusive value="9999999999999999999.999999"/>
+						<xs:minInclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="vtexen" use="required">
+				<xs:annotation>
+					<xs:documentation>Valor Total Exención Iva</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:maxInclusive value="9999999999999999999.999999"/>
+						<xs:minInclusive value="0"/>
+						<xs:totalDigits value="25"/>
+						<xs:fractionDigits value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="flimexp" type="xs:date" use="required">
+				<xs:annotation>
+					<xs:documentation>Fecha Limite Exportación Mercancías</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="nitems" use="required">
+				<xs:annotation>
+					<xs:documentation>Número de Items</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:totalDigits value="4"/>
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mas">
+		<xs:annotation>
+			<xs:documentation>Elemento raiz del xml de carga masiva</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Cab" type="CabType"/>
+				<xs:element ref="cp" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		<!--
+		<xs:unique name="idcp">
+			<xs:selector xpath="cp"/>
+			<xs:field xpath="@ncip"/>
+		</xs:unique>
+		-->
+	</xs:element>
+	<xs:element name="cphoja2">
+		<xs:annotation>
+			<xs:documentation>Elemento que contiene la relación de mercancias nacionales o servicios intermedios de la producción - Sip</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="nfact" use="optional">
+				<xs:annotation>
+					<xs:documentation>Número de Factura de Compra</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="20"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ffac" type="xs:date" use="optional">
+				<xs:annotation>
+					<xs:documentation>Fecha Factura</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="resfac" use="optional">
+				<xs:annotation>
+					<xs:documentation>Resolución Facturación</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+						<xs:minLength value="1"/>
+						<xs:pattern value="[0-9]{1,20}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="fres" type="xs:date" use="optional">
+				<xs:annotation>
+					<xs:documentation>Fecha Resolución</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="tipo" use="required">
+				<xs:annotation>
+					<xs:documentation>Tipo de Producto o Servicio</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:totalDigits value="1"/>
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="subp" use="optional">
+				<xs:annotation>
+					<xs:documentation>Subpartida Arancelaria</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+						<xs:minLength value="10"/>
+						<xs:pattern value="[0-9]{10}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="desc" use="required">
+				<xs:annotation>
+					<xs:documentation>Descripción de la Mercancia o Sip</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="450"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="cunfi" use="required">
+				<xs:annotation>
+					<xs:documentation>Cantidad Unidades Físicas</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9999999999999999999.999999"/>
+						<xs:totalDigits value="25"/>
+						<xs:fractionDigits value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="unfi" use="required">
+				<xs:annotation>
+					<xs:documentation>Unidad Física</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="cunco" use="required">
+				<xs:annotation>
+					<xs:documentation>Cantidad Unidades Comerciales</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:maxInclusive value="9999999999999999999.999999"/>
+						<xs:minInclusive value="0"/>
+						<xs:totalDigits value="25"/>
+						<xs:fractionDigits value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="unco" use="required">
+				<xs:annotation>
+					<xs:documentation>Unidad Comercial</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="vuni" use="required">
+				<xs:annotation>
+					<xs:documentation>Valor Unitario</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9999999999999999999.999999"/>
+						<xs:totalDigits value="25"/>
+						<xs:fractionDigits value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="vtotal" use="required">
+				<xs:annotation>
+					<xs:documentation>Valor Total</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:maxInclusive value="9999999999999999999.999999"/>
+						<xs:minInclusive value="0"/>
+						<xs:totalDigits value="25"/>
+						<xs:fractionDigits value="6"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="tiva" use="required">
+				<xs:annotation>
+					<xs:documentation>Tarifa Iva (Exenta)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="100.00"/>
+						<xs:totalDigits value="5"/>
+						<xs:fractionDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="vexen" use="required">
+				<xs:annotation>
+					<xs:documentation>Valor Exención Iva</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:totalDigits value="25"/>
+						<xs:fractionDigits value="6"/>
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="9999999999999999999.999999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="codins" use="required">
+				<xs:annotation>
+					<xs:documentation>Código Insumo</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="99999"/>
+						<xs:totalDigits value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="CabType">
+		<xs:sequence>
+			<xs:element name="Ano" type="xs:gYear" nillable="false">
+				<xs:annotation>
+					<xs:documentation>Año de envio</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodCpt" nillable="false">
+				<xs:annotation>
+					<xs:documentation>Concepto</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="0"/>
+						<xs:maxInclusive value="99"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Formato" fixed="640">
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger">
+						<xs:totalDigits value="4"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Version" type="xs:positiveInteger" fixed="1"/>
+			<xs:element name="NumEnvio">
+				<xs:annotation>
+					<xs:documentation>Numero de envio</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger">
+						<xs:totalDigits value="8"/>
+						<xs:maxInclusive value="99999999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FecEnvio" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Fecha de envio</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FecInicial" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Fecha inicial</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FecFinal" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Fecha Final</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ValorTotal" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Valor Total</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CantReg">
+				<xs:annotation>
+					<xs:documentation>Cantidad de registros</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:positiveInteger">
+						<xs:totalDigits value="4"/>
+						<xs:maxInclusive value="9999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

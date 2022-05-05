@@ -1,0 +1,85 @@
+﻿@model ComEx.Context.tmRegalias
+
+@{
+    ViewBag.Title = "Editar Regalías";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="~/bower_components/bootstrap-select/css/bootstrap-select.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="~/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" media="all" rel="stylesheet" type="text/css" />
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmTmRegaliasEditar" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="position: relative">
+        <br />
+        <h4>Regalías</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.HiddenFor(model => model.intIdRglia, new { htmlAttributes = new { @class = "form-control" } })
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intIdLnea, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdLnea, new SelectList(ViewBag.listTipoMaterial, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdLnea, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intAno, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.intAno, new { htmlAttributes = new { @class = "form-control", @min = "1990", @max = "2099" } })
+                @Html.ValidationMessageFor(model => model.intAno, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intMes, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.intMes, new { htmlAttributes = new { @class = "form-control", @min = "1", @max = "12" } })
+                @Html.ValidationMessageFor(model => model.intMes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numVlorPorGrmo, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numVlorPorGrmo, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numVlorPorGrmo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.fecIncioPriodo, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.fecIncioPriodo, new { htmlAttributes = new { @class = "form-control calendario" } })
+                @Html.ValidationMessageFor(model => model.fecIncioPriodo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.fecFinPriodo, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.fecFinPriodo, new { htmlAttributes = new { @class = "form-control calendario" } })
+                @Html.ValidationMessageFor(model => model.fecFinPriodo, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <input type="submit" value="Actualizar" class="btn btn-success" id="btnEditar" data-loading-text="Actualizando..." />
+                <a href="@Url.Action("Index", "tmRegalias")" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
+
+    </div>
+}
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment-with-locales.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/pages/regalias.js"></script>
+}

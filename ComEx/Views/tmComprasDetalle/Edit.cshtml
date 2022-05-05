@@ -1,0 +1,154 @@
+﻿@model ComEx.Context.tmComprasDetalle
+
+@{
+    ViewBag.Title = "Editar Detalle Orden de Compra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="~/bower_components/bootstrap-select/css/bootstrap-select.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="~/bower_components/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" media="all" rel="stylesheet" type="text/css" />
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmTmComprasDetalleEditar" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <br />
+        <h4>Detalle Orden de Compra</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.intIdCmpraDtlle)
+        @Html.HiddenFor(model => model.intIdCmpra)
+
+        <div class="form-group">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intCdItem, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.intCdItem, new { htmlAttributes = new { @class = "form-control Numero" } })
+                @Html.ValidationMessageFor(model => model.intCdItem, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intIdInsmo, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdInsmo, new SelectList(ViewBag.lstInsumo, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdInsmo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numCntdadFctra, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numCntdadFctra, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numCntdadFctra, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numVlorUntrio, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numVlorUntrio, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numVlorUntrio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numCntdadCP, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numCntdadCP, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numCntdadCP, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numSbttal, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numSbttal, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numSbttal, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numPrcntjeIva, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numPrcntjeIva, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numPrcntjeIva, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intIdAdqurdasTtlo, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdAdqurdasTtlo, new SelectList(ViewBag.lstAdquirida, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdAdqurdasTtlo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.varCmntrios, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.TextAreaFor(model => model.varCmntrios, 1, 0, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.varCmntrios, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numFnos, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numFnos, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numFnos, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numLey, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numLey, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numLey, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.intIdCPDtlle, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.intIdCPDtlle, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.intIdCPDtlle, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numRglias, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numRglias, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numRglias, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intIdRglia, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdRglia, new SelectList(ViewBag.listRegalia, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdRglia, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numPorcMnria, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numPorcMnria, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numPorcMnria, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.numVlorUntrioUS, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.numVlorUntrioUS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.numVlorUntrioUS, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <input type="submit" value="Actualizar" class="btn btn-success" id="btnEditar" data-loading-text="Actualizando..." />
+                <a href="@Url.Action("Index", "tmCompras")" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment-with-locales.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/Scripts/pages/compras.detalle.js"></script>
+}

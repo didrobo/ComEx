@@ -1,0 +1,82 @@
+﻿@model ComEx.Context.tmLineas
+
+@{
+    /**/
+
+    ViewBag.Title = "Crear Tipo de Material";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="~/bower_components/bootstrap-select/css/bootstrap-select.min.css" media="all" rel="stylesheet" type="text/css" />
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmtmTipoMaterialCrear" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="position: relative">
+        <br />
+        <h4>Tipos de Material</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.HiddenFor(model => model.intIdLnea, new { htmlAttributes = new { @class = "form-control" } })
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varCdLnea, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varCdLnea, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varCdLnea, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varDscrpcionLnea, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varDscrpcionLnea, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varDscrpcionLnea, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varDscrpcionDian, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varDscrpcionDian, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varDscrpcionDian, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numPrcntjeBseRglias, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numPrcntjeBseRglias, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numPrcntjeBseRglias, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intIdRtncionfuente, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdRtncionfuente, new SelectList(ViewBag.listReteFuente, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdRtncionfuente, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.numFctor, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.numFctor, new { htmlAttributes = new { @class = "form-control Decimal" } })
+                @Html.ValidationMessageFor(model => model.numFctor, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <input type="submit" value="Guardar" class="btn btn-success" id="btnGuardar" data-loading-text="Guardando..." />
+                <a href="@Url.Action("Index", "tmTipoMaterial")" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
+
+    </div>
+}
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/pages/tipo.material.js"></script>
+}

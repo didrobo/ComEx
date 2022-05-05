@@ -1,0 +1,76 @@
+﻿@model ComEx.Context.tmCiudades
+
+@{
+    /**/
+
+    ViewBag.Title = "Crear Ciudad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="~/bower_components/bootstrap-select/css/bootstrap-select.min.css" media="all" rel="stylesheet" type="text/css" />
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmtmCiudadesCrear" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="position: relative">
+        <br />
+        <h4>Ciudad</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.HiddenFor(model => model.intIdCiudad, new { htmlAttributes = new { @class = "form-control" } })
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varCdCiudad, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varCdCiudad, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varCdCiudad, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varAbrvtra, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varAbrvtra, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varAbrvtra, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varDscrpcionCiudad, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varDscrpcionCiudad, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varDscrpcionCiudad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.varCd, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.varCd, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.varCd, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.intIdDprtmnto, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.intIdDprtmnto, new SelectList(ViewBag.listDepartamento, "Value", "Text"), new { @class = "selectpicker show-tick show-menu-arrow form-control", data_live_search = "true" })
+                @Html.ValidationMessageFor(model => model.intIdDprtmnto, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3">
+                <input type="submit" value="Guardar" class="btn btn-success" id="btnGuardar" data-loading-text="Guardando..." />
+                <a href="@Url.Action("Index", "tmCiudades")" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
+
+    </div>
+}
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/pages/ciudad.js"></script>
+}

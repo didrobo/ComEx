@@ -1,0 +1,114 @@
+﻿.table th, .table td {
+    white-space: nowrap;
+}
+
+div.dataTables_scrollFoot table tfoot tr:last-child th:first-child, div.dataTables_scrollFoot table tfoot tr:last-child td:first-child {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.table > tfoot:first-child > tr:first-child > th {
+    border-top: 0;
+}
+
+table.table-bordered tfoot th, table.table-bordered tfoot td {
+    border-left-width: 0;
+    border-top-width: 0;
+}
+
+.table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th {
+    border-bottom-width: 0px;
+}
+
+table {
+    font-size: 11px;
+}
+
+td.details-control {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: inherit;
+    line-height: 1;
+    font-family: FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    color: #337ab7;
+}
+
+tr.details td.details-control {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: inherit;
+    line-height: 1;
+    font-family: FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    color: #ff0000;
+}
+
+.buttonCrud {
+    padding-right: 5px;
+}
+
+.del {
+    color: #ff0000;
+}
+
+.btn_table_verde {
+    color: #5ac421
+}
+
+.btn_table_azul {
+    color: #337ab7
+}
+
+.control-label {
+    white-space: nowrap;
+}
+
+div.dataTables_processing { z-index: 1; }
+
+.loading_input {    
+    background-color: #ffffff;
+    background-image: url("../bower_components/bootstrap-fileinput/img/loading-sm.gif");
+    background-size: 15px 15px;
+    background-position:right center;
+    background-repeat: no-repeat;
+}
+
+.disabled_control {
+    opacity: 0.7;
+    color: gray;
+    cursor: default;
+}
+
+label.error {
+    color: #a94442;
+    font-size: 11px;
+}
+
+.mayuscula
+{
+	text-transform: uppercase;
+}
+
+.anuladoClass {
+    background-color: gainsboro !important;
+    font-style: italic;
+}

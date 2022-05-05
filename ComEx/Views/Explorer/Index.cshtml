@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Folder Explorer";
+    Layout = "~/Views/Shared/_EmptyLayout.cshtml";
+}
+@{Uri uri = Request.Url;}
+
+@*Show the current directory name using page URL. *@
+<h2>@Server.UrlDecode(uri.Segments.Last())</h2>
+
+@*If we were in root folder then don't show the up one level image. *@
+@if (uri.AbsolutePath.ToLower() != "/explorer/")
+{
+    @*Making a URL to going up one level. *@
+    <a title="Parent"
+       href="@uri.AbsoluteUri.Remove(uri.AbsoluteUri.Length - uri.Segments.Last().Length)">
+        <img src="~/img/back.png" alt="Up" style="width: 20px; height: 20px; border: none" />
+    </a>
+}
+<ul>
+    @*Listing the directories *@
+    @foreach (ComEx.Models.DirModel dir in Model.dirModelList)
+    {
+        <li>
+            <img src="~/img/folder.png" alt="Folder Logo" align="top" style="width: 20px;
+                height: 20px; border: none" />
+            <a href="@dir.DirName/" title="@dir.DirName">@dir.DirName</a>
+            . . . . . . @dir.DirAccessed
+        </li>
+    }
+    @*Listing the files *@
+    @foreach (ComEx.Models.FileModel file in Model.fileModelList)
+    {
+        <li>
+            <a href="@(uri.AbsolutePath + file.FileName)"
+               title="@file.FileName" target="_blank">
+                @file.FileName
+            </a>. . . . . . @file.FileSizeText
+            . . . . . . @file.FileAccessed
+        </li>
+    }
+</ul>

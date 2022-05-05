@@ -1,0 +1,34 @@
+﻿.ocultar {
+    display: none;
+}
+
+.columns {
+    -moz-column-width: 11.5em; /* Firefox */
+    -webkit-column-width: 11.5em; /* webkit, Safari, Chrome */
+    column-width: 11.5em;
+}
+
+    /*remove standard list and bullet formatting from ul*/
+    .columns ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+        /* correct webkit/chrome uneven margin on the first column*/
+        .columns ul li:first-child {
+            margin-top: 0px;
+        }
+
+.redClass {
+    background-color: orangered !important;
+    color: white;
+}
+
+.greenClass {
+    background-color: lightgreen !important;
+}
+
+.yellowClass {
+    background-color: gold !important;
+}

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Reporte Orden Compra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css
+{
+    <link href="@Url.Content("~/bower_components/alertifyjs/css/alertify.css")" media="all" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bower_components/alertifyjs/css/themes/default.css")" media="all" rel="stylesheet" type="text/css" />
+}
+
+@*@Html.Partial("Reportes", new ViewDataDictionary { { "Reporte", "RptOrdenCompra" } })*@
+
+<iframe id="reportFrame" width="100%" height="1150px" scrolling="no" frameborder="0" src="~/Report/ContenedorReport.aspx?Reporte=RptOrdenCompra" allowfullscreen></iframe>
+
+@section scripts
+{
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment.min.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/moment-with-locales.js"></script>
+    <script src="~/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/bower_components/alertifyjs/js/alertify.min.js"></script>
+}

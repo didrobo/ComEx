@@ -1,0 +1,2175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="OrdenCompra">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>5036995a-bdac-47f8-9079-ec061cb3948e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dtOrdenCompra">
+      <Query>
+        <DataSourceName>OrdenCompra</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="varNitImprtdorExprtdor">
+          <DataField>varNitImprtdorExprtdor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varDrccion">
+          <DataField>varDrccion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varTlfno">
+          <DataField>varTlfno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varFax">
+          <DataField>varFax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="intIdCiudad">
+          <DataField>intIdCiudad</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="varDscrpcionCiudad">
+          <DataField>varDscrpcionCiudad</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fecCmpra">
+          <DataField>fecCmpra</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="varNmroFctra">
+          <DataField>varNmroFctra</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varNitPrvdor">
+          <DataField>varNitPrvdor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varNmbre">
+          <DataField>varNmbre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varDirProveedor">
+          <DataField>varDirProveedor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varTelProveedor">
+          <DataField>varTelProveedor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varCiudadProveedor">
+          <DataField>varCiudadProveedor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varDscrpcionDprtmnto">
+          <DataField>varDscrpcionDprtmnto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varDscrpcionInsmo">
+          <DataField>varDscrpcionInsmo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="numCntdadFctra">
+          <DataField>numCntdadFctra</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="varCiudadMaterial">
+          <DataField>varCiudadMaterial</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varDepartamentoMaterial">
+          <DataField>varDepartamentoMaterial</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="numLey">
+          <DataField>numLey</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numFnos">
+          <DataField>numFnos</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numVlorUntrio">
+          <DataField>numVlorUntrio</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numSbttal">
+          <DataField>numSbttal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numVlorRglias">
+          <DataField>numVlorRglias</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numPrcntjeIva">
+          <DataField>numPrcntjeIva</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numVlorIva">
+          <DataField>numVlorIva</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numVlorRtncionFuente">
+          <DataField>numVlorRtncionFuente</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numValorPagar">
+          <DataField>numValorPagar</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalFactura">
+          <DataField>TotalFactura</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numRegaliasPlataOro">
+          <DataField>numRegaliasPlataOro</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numVlorPorGrmo">
+          <DataField>numVlorPorGrmo</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="intIdCmpra">
+          <DataField>intIdCmpra</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="intIdUsuario">
+          <DataField>intIdUsuario</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="numFnosPlataOro">
+          <DataField>numFnosPlataOro</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numLeyPlataOro">
+          <DataField>numLeyPlataOro</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="varNmbreEmprsa">
+          <DataField>varNmbreEmprsa</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="numRegaliasPlatinoOro">
+          <DataField>numRegaliasPlatinoOro</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numFnosPlatinoOro">
+          <DataField>numFnosPlatinoOro</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="numLeyPlatinoOro">
+          <DataField>numLeyPlatinoOro</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="varFairminedId">
+          <DataField>varFairminedId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="varFairminedIdAnexpo">
+          <DataField>varFairminedIdAnexpo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>OrdenCompra</rd:DataSetName>
+        <rd:SchemaPath>D:\OneDrive\Trabajos\Anexpo\Sistema CI\Proyectos\ComEx\ComEx\Report\DataSet\OrdenCompra.xsd</rd:SchemaPath>
+        <rd:TableName>vFormatoOrdenesCompraCI</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix9">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>19.40308cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>23.74109cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle8">
+                          <ReportItems>
+                            <Textbox Name="varNmroFctra1">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>="# " + Space(Len("ORDEN DE "))  + Fields!varNmroFctra.Value + vbCrLf + "ORDEN DE COMPRA"</Value>
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>varNmroFctra1</rd:DefaultName>
+                              <Top>0.77639cm</Top>
+                              <Left>15.23091cm</Left>
+                              <Height>1.27733cm</Height>
+                              <Width>4.17217cm</Width>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>5pt</PaddingLeft>
+                                <PaddingRight>5pt</PaddingRight>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="varNmbreEmprsa">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!varNmbreEmprsa.Value</Value>
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>varNmbreEmprsa</rd:DefaultName>
+                              <Top>0.3175cm</Top>
+                              <Height>0.6cm</Height>
+                              <Width>4.51083cm</Width>
+                              <ZIndex>1</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="varNitPrvdor2">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>="NIT: " + Fields!varNitImprtdorExprtdor.Value</Value>
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>varNitPrvdor1</rd:DefaultName>
+                              <Top>1.02333cm</Top>
+                              <Height>0.6cm</Height>
+                              <Width>4.51083cm</Width>
+                              <ZIndex>2</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="varDrccion">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!varDrccion.Value</Value>
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>varDrccion</rd:DefaultName>
+                              <Top>1.68487cm</Top>
+                              <Height>0.6cm</Height>
+                              <Width>5.64867cm</Width>
+                              <ZIndex>3</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="varDscrpcionCiudad">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!varDscrpcionCiudad.Value</Value>
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>varDscrpcionCiudad</rd:DefaultName>
+                              <Top>1.68487cm</Top>
+                              <Left>8.70162cm</Left>
+                              <Height>0.6cm</Height>
+                              <Width>4.38383cm</Width>
+                              <ZIndex>4</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="varTlfno">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>="TELEFONO: " + Fields!varTlfno.Value</Value>
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>varTlfno</rd:DefaultName>
+                              <Top>2.28487cm</Top>
+                              <Height>0.6cm</Height>
+                              <Width>5.64867cm</Width>
+                              <ZIndex>5</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="varFax">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>="FAX: " + Fields!varFax.Value</Value>
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>varFax</rd:DefaultName>
+                              <Top>2.28487cm</Top>
+                              <Left>8.70162cm</Left>
+                              <Height>0.6cm</Height>
+                              <Width>4.38383cm</Width>
+                              <ZIndex>6</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Rectangle Name="Rectangle10">
+                              <ReportItems>
+                                <Textbox Name="fecCmpra">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="Fecha de Orden: " + Format(Fields!fecCmpra.Value, "dd/MM/yyyy")</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>fecCmpra</rd:DefaultName>
+                                  <Top>0.38806cm</Top>
+                                  <Left>0.3175cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>5.675cm</Width>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="varDscrpcionInsmo">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="Tipo de Material: " + Fields!varDscrpcionInsmo.Value</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>varDscrpcionInsmo</rd:DefaultName>
+                                  <Top>0.38806cm</Top>
+                                  <Left>6.7437cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>7.74933cm</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Rectangle Name="Rectangle11">
+                                  <ReportItems>
+                                    <Textbox Name="varNitPrvdor">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>="Cédula/Nit: " + Fields!varNitPrvdor.Value</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>varNitPrvdor</rd:DefaultName>
+                                      <Top>0.3175cm</Top>
+                                      <Left>0.3175cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>5.3575cm</Width>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="varNmbre">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>="Cliente: " + Fields!varNmbre.Value</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>varNmbre</rd:DefaultName>
+                                      <Top>1.02333cm</Top>
+                                      <Left>0.3175cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>17.2447cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="varCiudadProveedor">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>="Ciudad: " + Fields!varCiudadMaterial.Value</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>varCiudadProveedor</rd:DefaultName>
+                                      <Top>1.72917cm</Top>
+                                      <Left>0.3175cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>10.49253cm</Width>
+                                      <ZIndex>2</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="varDscrpcionDprtmnto">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>="Departamento: " + Fields!varDepartamentoMaterial.Value</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>varDscrpcionDprtmnto</rd:DefaultName>
+                                      <Top>1.72917cm</Top>
+                                      <Left>11.2522cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>6.31cm</Width>
+                                      <ZIndex>3</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="varDirProveedor">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>="Dirección: " + Fields!varDirProveedor.Value</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>varDirProveedor</rd:DefaultName>
+                                      <Top>2.435cm</Top>
+                                      <Left>0.3175cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>10.49253cm</Width>
+                                      <ZIndex>4</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="varTlfno2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>="Teléfono: " + Fields!varTelProveedor.Value</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Left</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>varTlfno</rd:DefaultName>
+                                      <Top>2.50556cm</Top>
+                                      <Left>11.2522cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>6.31cm</Width>
+                                      <ZIndex>5</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="varFairminedId">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!varFairminedId.Value</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Top>0.3175cm</Top>
+                                      <Left>8.81803cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>8.74417cm</Width>
+                                      <ZIndex>6</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>1.16444cm</Top>
+                                  <Left>0.3175cm</Left>
+                                  <Height>3.24083cm</Height>
+                                  <Width>18.69484cm</Width>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Textbox Name="numCntdadFctra1">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="Peso Inicial: " + FORMAT(Fields!numCntdadFctra.Value, "N2")</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>numCntdadFctra1</rd:DefaultName>
+                                  <Top>4.57644cm</Top>
+                                  <Left>0.31044cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>6.45817cm</Width>
+                                  <ZIndex>3</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox140">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="Peso Final: " + FORMAT(Fields!numCntdadFctra.Value, "N2")</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox139</rd:DefaultName>
+                                  <Top>4.57644cm</Top>
+                                  <Left>6.94499cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>6.45817cm</Width>
+                                  <ZIndex>4</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="numVlorPorGrmo">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="Precio base Regalia por Tipo de Material: " + FORMAT(Fields!numVlorPorGrmo.Value, "N")</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <Top>5.31756cm</Top>
+                                  <Left>0.31044cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>8.5452cm</Width>
+                                  <ZIndex>5</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="varCiudadMaterial">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="Ciudad del Material: " + Fields!varCiudadMaterial.Value</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>varCiudadMaterial</rd:DefaultName>
+                                  <Top>5.28228cm</Top>
+                                  <Left>9.03203cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>9.98031cm</Width>
+                                  <ZIndex>6</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Rectangle Name="Rectangle12">
+                                  <ReportItems>
+                                    <Textbox Name="varNmroFctra">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>="Recibo No: " + Fields!varNmroFctra.Value</Value>
+                                              <Style>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>varNmroFctra</rd:DefaultName>
+                                      <Left>0.35279cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>6.183cm</Width>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="varNmroFctra2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>="Fecha de Recibo: " + FORMAT(Fields!fecCmpra.Value, "dd/MM/yyyy")</Value>
+                                              <Style>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>varNmroFctra</rd:DefaultName>
+                                      <Left>8.20678cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>6.96028cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Line Name="Line2">
+                                      <Top>0.93783cm</Top>
+                                      <Height>0cm</Height>
+                                      <Width>16.9253cm</Width>
+                                      <ZIndex>2</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                      </Style>
+                                    </Line>
+                                    <Textbox Name="Textbox148">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Gramos Brutos:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox148</rd:DefaultName>
+                                      <Top>1.11422cm</Top>
+                                      <Left>0.35277cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>2.78363cm</Width>
+                                      <ZIndex>3</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox149">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Ley por Tipo:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox148</rd:DefaultName>
+                                      <Top>1.71422cm</Top>
+                                      <Left>0.35276cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>2.78363cm</Width>
+                                      <ZIndex>4</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox150">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Finos por Tipo:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox148</rd:DefaultName>
+                                      <Top>2.31422cm</Top>
+                                      <Left>0.35276cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>2.78363cm</Width>
+                                      <ZIndex>5</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numCntdadFctra">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numCntdadFctra.Value, "N2")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numCntdadFctra</rd:DefaultName>
+                                      <Top>1.11422cm</Top>
+                                      <Left>3.3128cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.22298cm</Width>
+                                      <ZIndex>6</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numCntdadFctra2">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numLey.Value, "N2")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numCntdadFctra</rd:DefaultName>
+                                      <Top>1.71422cm</Top>
+                                      <Left>3.31283cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.22298cm</Width>
+                                      <ZIndex>7</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numCntdadFctra3">
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numFnos.Value, "N2")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numCntdadFctra</rd:DefaultName>
+                                      <Top>2.31422cm</Top>
+                                      <Left>3.3128cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.22298cm</Width>
+                                      <ZIndex>8</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Line Name="Line3">
+                                      <Top>3.16116cm</Top>
+                                      <Left>0.35281cm</Left>
+                                      <Height>0cm</Height>
+                                      <Width>6.183cm</Width>
+                                      <ZIndex>9</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                      </Style>
+                                    </Line>
+                                    <Textbox Name="Textbox151">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Ley Plata/Oro:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox148</rd:DefaultName>
+                                      <Top>3.23172cm</Top>
+                                      <Left>0.35276cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>2.78363cm</Width>
+                                      <ZIndex>10</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox152">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Finos Plata/Oro:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox148</rd:DefaultName>
+                                      <Top>3.83172cm</Top>
+                                      <Left>0.35276cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>2.78363cm</Width>
+                                      <ZIndex>11</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numCntdadFctra4">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numLeyPlataOro.Value, "N2")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numCntdadFctra</rd:DefaultName>
+                                      <Top>3.23172cm</Top>
+                                      <Left>3.31279cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.22298cm</Width>
+                                      <ZIndex>12</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numCntdadFctra5">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numFnosPlataOro.Value, "N2")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numCntdadFctra</rd:DefaultName>
+                                      <Top>3.83172cm</Top>
+                                      <Left>3.3128cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.22298cm</Width>
+                                      <ZIndex>13</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox158">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Precio:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox158</rd:DefaultName>
+                                      <Top>1.11422cm</Top>
+                                      <Left>8.20678cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>4.43206cm</Width>
+                                      <ZIndex>14</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox159">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Total neto del Metal:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox158</rd:DefaultName>
+                                      <Top>2.20811cm</Top>
+                                      <Left>8.20678cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>4.43206cm</Width>
+                                      <ZIndex>15</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Line Name="Line4">
+                                      <Top>2.03172cm</Top>
+                                      <Left>8.20678cm</Left>
+                                      <Height>0cm</Height>
+                                      <Width>8.16393cm</Width>
+                                      <ZIndex>16</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                      </Style>
+                                    </Line>
+                                    <Textbox Name="Textbox160">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=IIf(Fields!varDscrpcionInsmo.Value = "PLATA", "Total Reg. Plata (-):", "Total Reg. Oro\Platino (-):")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox158</rd:DefaultName>
+                                      <Top>2.87866cm</Top>
+                                      <Left>8.20678cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>4.43206cm</Width>
+                                      <ZIndex>17</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox161">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=IIf(Fields!varDscrpcionInsmo.Value = "PLATA", "Total Reg. Oro (-):", "Total Reg. Plata (-):")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox158</rd:DefaultName>
+                                      <Top>3.54922cm</Top>
+                                      <Left>8.20678cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>4.43206cm</Width>
+                                      <ZIndex>18</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox163">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Retención:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox158</rd:DefaultName>
+                                      <Top>4.14922cm</Top>
+                                      <Left>8.20678cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>4.43206cm</Width>
+                                      <ZIndex>19</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numVlorUntrio">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!TotalFactura.Value / Fields!numCntdadFctra.Value, "N4")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numVlorUntrio</rd:DefaultName>
+                                      <Top>1.11422cm</Top>
+                                      <Left>12.81523cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.55549cm</Width>
+                                      <ZIndex>20</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numVlorUntrio2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!TotalFactura.Value, "N4")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numVlorUntrio</rd:DefaultName>
+                                      <Top>2.20811cm</Top>
+                                      <Left>12.81523cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.55549cm</Width>
+                                      <ZIndex>21</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numVlorUntrio3">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numVlorRglias.Value, "N4")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numVlorUntrio</rd:DefaultName>
+                                      <Top>2.87866cm</Top>
+                                      <Left>12.81523cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.55549cm</Width>
+                                      <ZIndex>22</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numVlorUntrio4">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numRegaliasPlataOro.Value, "N4")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numVlorUntrio</rd:DefaultName>
+                                      <Top>3.54922cm</Top>
+                                      <Left>12.81523cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.55549cm</Width>
+                                      <ZIndex>23</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numVlorUntrio6">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numVlorRtncionFuente.Value, "N4")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numVlorUntrio</rd:DefaultName>
+                                      <Top>4.14922cm</Top>
+                                      <Left>12.81524cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.55549cm</Width>
+                                      <ZIndex>24</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox153">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Ley Platino/Oro:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox148</rd:DefaultName>
+                                      <Top>4.43172cm</Top>
+                                      <Left>0.35276cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>2.78363cm</Width>
+                                      <ZIndex>25</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Textbox154">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Finos Platino/Oro:</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox148</rd:DefaultName>
+                                      <Top>5.03172cm</Top>
+                                      <Left>0.35276cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.27326cm</Width>
+                                      <ZIndex>26</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numCntdadFctra6">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numLeyPlatinoOro.Value, "N2")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numCntdadFctra</rd:DefaultName>
+                                      <Top>4.43172cm</Top>
+                                      <Left>3.31282cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.22298cm</Width>
+                                      <ZIndex>27</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numCntdadFctra7">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numFnosPlatinoOro.Value, "N2")</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Right</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numCntdadFctra</rd:DefaultName>
+                                      <Top>5.03172cm</Top>
+                                      <Left>3.81258cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>2.72323cm</Width>
+                                      <ZIndex>28</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Line Name="Line5">
+                                      <Top>5.03172cm</Top>
+                                      <Left>8.20678cm</Left>
+                                      <Height>0cm</Height>
+                                      <Width>8.16393cm</Width>
+                                      <ZIndex>29</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                      </Style>
+                                    </Line>
+                                  </ReportItems>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>6.09394cm</Top>
+                                  <Left>1.20227cm</Left>
+                                  <Height>5.9495cm</Height>
+                                  <Width>16.9253cm</Width>
+                                  <ZIndex>7</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Rectangle Name="Rectangle13">
+                                  <ReportItems>
+                                    <Textbox Name="Textbox172">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>VALOR A PAGAR</Value>
+                                              <Style>
+                                                <FontSize>12pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox172</rd:DefaultName>
+                                      <Top>0.03528cm</Top>
+                                      <Left>1.38526cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>3.83681cm</Width>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="numValorPagar">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=FORMAT(Fields!numValorPagar.Value, "C4")</Value>
+                                              <Style>
+                                                <FontSize>12pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>numValorPagar</rd:DefaultName>
+                                      <Top>0.03528cm</Top>
+                                      <Left>5.77946cm</Left>
+                                      <Height>0.6cm</Height>
+                                      <Width>5.95181cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>12.19377cm</Top>
+                                  <Left>3.62959cm</Left>
+                                  <Height>0.79961cm</Height>
+                                  <Width>12.0636cm</Width>
+                                  <ZIndex>8</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Textbox Name="numPrcntjeIva">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="Tarifa IVA (Exenta) del: " + FORMAT(Fields!numPrcntjeIva.Value, "N0") + "%"</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>numPrcntjeIva</rd:DefaultName>
+                                  <Top>13.17011cm</Top>
+                                  <Left>0.31044cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>4.61667cm</Width>
+                                  <ZIndex>9</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="numPrcntjeIva2">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="Valor exento IVA: " + FORMAT(Fields!numVlorIva.Value, "C0")</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>numPrcntjeIva</rd:DefaultName>
+                                  <Top>13.17011cm</Top>
+                                  <Left>5.57152cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>6.15806cm</Width>
+                                  <ZIndex>10</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Rectangle Name="Rectangle14">
+                                  <ReportItems>
+                                    <Textbox Name="Textbox176">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>="Declaro que los articulos en Oro y/o Platino, vendidos a esta firma provienen " +
+"de legitimas transacciones comerciales y la compra no proviene de fondos de " +
+"actividades ilicitas las cuales estan contempladas en el codigo penal colombiano " +
+"ó en cualquier norma vigente." + vbCrLf + vbCrLf +
+"Mediante la presente manifiesto a CI ANEXPO S.A.S que el metal que entrego en " +
+"este momento proviene del departamento de " + Fields!varDepartamentoMaterial.Value +
+" Municipio de " + Fields!varCiudadMaterial.Value + vbCrLf + vbCrLf +
+"Para efecto de liquidación y pago de las regalías, la información es la contenida " +
+"en la presente orden de compra la cual firmo como constancia."</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox176</rd:DefaultName>
+                                      <Top>0.3175cm</Top>
+                                      <Left>0.32456cm</Left>
+                                      <Height>1.89117cm</Height>
+                                      <Width>18.04162cm</Width>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Top>13.95328cm</Top>
+                                  <Left>0.31044cm</Left>
+                                  <Height>2.5cm</Height>
+                                  <Width>18.7019cm</Width>
+                                  <ZIndex>11</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Textbox Name="Textbox177">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>ESTE DOCUMENTO NO ES VALIDO SIN EL SELLO DE LA EMPRESA</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox177</rd:DefaultName>
+                                  <Top>16.48855cm</Top>
+                                  <Left>3.62959cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>12.0636cm</Width>
+                                  <ZIndex>12</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Line Name="Line6">
+                                  <Top>18.99978cm</Top>
+                                  <Left>0.3175cm</Left>
+                                  <Height>0cm</Height>
+                                  <Width>9.59083cm</Width>
+                                  <ZIndex>13</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                    </Border>
+                                  </Style>
+                                </Line>
+                                <Textbox Name="Textbox125">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!varNmbreEmprsa.Value</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox124</rd:DefaultName>
+                                  <Top>19.10561cm</Top>
+                                  <Left>0.3175cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>4.51083cm</Width>
+                                  <ZIndex>14</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="varNitPrvdor4">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>="NIT: " + Fields!varNitImprtdorExprtdor.Value</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>varNitPrvdor1</rd:DefaultName>
+                                  <Top>19.81145cm</Top>
+                                  <Left>0.3175cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>4.51083cm</Width>
+                                  <ZIndex>15</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Line Name="Line8">
+                                  <Top>18.99978cm</Top>
+                                  <Left>11.8872cm</Left>
+                                  <Height>0cm</Height>
+                                  <Width>6.91347cm</Width>
+                                  <ZIndex>16</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                    </Border>
+                                  </Style>
+                                </Line>
+                                <Textbox Name="Textbox181">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>MINERO y/o PROVEEDOR</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox181</rd:DefaultName>
+                                  <Top>19.10561cm</Top>
+                                  <Left>11.8872cm</Left>
+                                  <Height>0.6cm</Height>
+                                  <Width>5.6858cm</Width>
+                                  <ZIndex>17</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>2pt</PaddingLeft>
+                                    <PaddingRight>2pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Image Name="imgFirma">
+                                  <Source>External</Source>
+                                  <Value>="file:" + Parameters!Firma.Value</Value>
+                                  <Sizing>FitProportional</Sizing>
+                                  <Top>17.66206cm</Top>
+                                  <Left>0.3175cm</Left>
+                                  <Height>1.16133cm</Height>
+                                  <Width>5.33117cm</Width>
+                                  <ZIndex>18</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Image>
+                              </ReportItems>
+                              <KeepTogether>true</KeepTogether>
+                              <Top>3.16709cm</Top>
+                              <Height>20.574cm</Height>
+                              <Width>19.40308cm</Width>
+                              <ZIndex>7</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                            <Textbox Name="varFairminedId2">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!varFairminedIdAnexpo.Value</Value>
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <Top>1.02333cm</Top>
+                              <Left>8.70162cm</Left>
+                              <Height>0.6cm</Height>
+                              <Width>6.25543cm</Width>
+                              <ZIndex>8</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Detalles">
+                    <PageBreak>
+                      <BreakLocation>Between</BreakLocation>
+                    </PageBreak>
+                  </Group>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>dtOrdenCompra</DataSetName>
+            <Height>23.74109cm</Height>
+            <Width>19.40308cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>9.35522in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>7.92234in</Width>
+      <Page>
+        <PageHeight>27.94cm</PageHeight>
+        <PageWidth>21.59cm</PageWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Firma">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Firma</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Language>es-CO</Language>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>5c7e8137-629b-4ab7-a2cb-a7164ccead5b</rd:ReportID>
+</Report>
